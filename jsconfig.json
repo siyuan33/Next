@@ -4,6 +4,6 @@
       "@/*": ["./src/*"]
     },
     "checkJs": true,
-    "jsx": "react"
+    "jsx": "react-jsx"
   }
 }

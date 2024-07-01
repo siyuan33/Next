@@ -1,6 +1,10 @@
 // @ts-nocheck
 import { Suspense } from 'react'
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+function sleep(ms) {
+	return new Promise(function (resolve, reject) {
+		setTimeout(resolve, ms)
+	})
+}
 
 async function PostFeed() {
 	await sleep(2000)

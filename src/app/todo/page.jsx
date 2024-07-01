@@ -1,12 +1,21 @@
-export default async function Page() {
-	const res = await fetch('https://jsonplaceholder.typicode.com/todos')
-	const data = (await res.json()).slice(0, 10)
-	// console.log(data)
+'use client'
+
+import { useState } from 'react'
+
+console.log('client')
+
+export default function Page() {
+	console.log('client Page')
+
+	const [text, setText] = useState('init text')
+
 	return (
-		<ul>
-			{data.map(({ title, id }) => {
-				return <li key={id}>{title}</li>
-			})}
-		</ul>
+		<button
+			onClick={() => {
+				setText('change text')
+			}}
+		>
+			{text}
+		</button>
 	)
 }
